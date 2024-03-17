@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th, td{
+            padding: 10px 20px;
+            border: 1px solid #000;
+        }
+    </style>
+
+</head>
+<body id="body">
+
+    <table id = "demoTable">
+        <tr>
+          <td></td>
+          <th>品名</th>
+          <th>容量</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>金額</th>
+          <th>溫度</th>
+          <th>甜度</th>
+          <th>訂購人</th>
+        </tr>
+        <tr>
+          <td>
+            <button id="addToOrder">確認</button>
+          </td> 
+          <td>
+            <select id="nameDropdown">
+            </select>
+          </td>          
+          <td>
+            <select id="volDropdown">
+            </select>
+          </td>
+          <td id="priceDropdown">
+              0
+          </td>
+          <td>
+            <input type="number" id="qty" min="0" value="0" />
+          </td>
+          <td id="totalPrice">
+            0
+          </td>
+          <td>
+            <select id="temp">
+                <option>熱</option>
+                <option>全冰</option>
+                <option>少冰</option>
+                <option>去冰</option>
+            </select>
+          </td>
+          <td>
+            <select id="swt">
+                <option>全糖</option>
+                <option>8分糖</option>
+                <option>5分糖</option>
+                <option>3分糖</option>
+                <option>1分糖</option>
+                <option>無糖</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" id="customer" />
+          </td>
+        </tr>
+    </table>
+
+      <h2>訂購清單</h2>
+    <table id = "orderTable">
+        <tr>
+          <td></td>
+          <th>品名</th>
+          <th>容量</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>金額</th>
+          <th>溫度</th>
+          <th>甜度</th>
+          <th>訂購人</th>
+        </tr>
+    </table>
+
+<p>
+    <button id="delete">刪除勾選</button>
+    總計:<span id="orderCount"> 0</span>份<span id="totalAmount"> 0 </span>元
+    <button id="checkoutButton">結帳</button>
+</p>
+
+<div id="modal" style="display: none;" class="modal">
+    <div class="modal-content">
+      <!-- 顯示訂購資料和總金額的內容 -->
+      <h2>訂購人: <span id="ordercusInModal"></span></h2>
+      <div id="orderSummaryInModal"></div>
+      <p>合計:<span id="orderCountInModal"> 0</span>份<span id="totalAmountInModal"> 0 </span>元</p>
+      <!-- 關閉按鈕 -->
+      <button id="closeModal">關閉</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>  
+</body>
+</html>
